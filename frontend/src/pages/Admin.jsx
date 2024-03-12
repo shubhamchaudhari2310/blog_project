@@ -93,26 +93,64 @@ export default function Admin() {
                   <div className="alert alert-success">Blog Added</div>
                 )}
                 <form onSubmit={handleAddToBlog}>
+                  Title
+                  <br />
                   <input
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
+                    placeholder="e.g: election"
                     type="text"
                     className="form-control"
                   />
                   <br />
+                  Short decription
                   <input
                     value={shortDesc}
                     onChange={(e) => setShortDesc(e.target.value)}
                     type="text"
                     className="form-control"
+                    placeholder="e.g: election is a very important for nation"
                   />
                   <br />
+                  Decription
                   <input
                     value={Desc}
                     onChange={(e) => setDesc(e.target.value)}
                     type="text"
                     className="form-control"
                   />
+                  <br />
+                  <select
+                    class="form-select"
+                    aria-label="Default select example"
+                    /*
+                    onChange={(e) => {
+                      console.log("shubb==", e.target.children);
+                      const child = e.target.children;
+                      if (child.length) {
+                        console.log("child----", child.length);
+                        e.target.childNodes.forEach((ew) => {
+                          console.log("llllllllll", ew, "----", ew.className);
+                          if (
+                            e.target.value == "medium" &&
+                            ew.className === "bg-warning"
+                          ) {
+                            alert("aaaa");
+                          }
+                        });
+                      }
+                    }}
+                    */
+                  >
+                    <option selected>Pripority</option>
+                    <option value="high" className="">
+                      High
+                    </option>
+                    <option value="medium" className="bg-warning">
+                      Medium
+                    </option>
+                    <option value="low">Low</option>
+                  </select>
                   <br />
                   <button className="btn btn-success btn-lg w-100">
                     Add Blog
